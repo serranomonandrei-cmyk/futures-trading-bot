@@ -132,9 +132,10 @@ class Backtester:
         signals = self.strategy_fn(df)
 
         # Need ATR for stop calculation
-        from regime import calc_atr
+        h, l, c = df["high"], df["low"], df["close"].shift(1)
+        tr = pd.concat([h - l, (h - c).abs(), (l - c).abs()], axis=1).max(axis=1)
         df = df.copy()
-        df["atr"] = calc_atr(df, 14)
+        df["atr"] = tr.rolling(14).mean()
 
         # === MAIN LOOP ===
         for i in range(1, len(df)):
