@@ -34,7 +34,7 @@ DONCHIAN_PERIOD = 25       # Backtested best for ETH
 DONCHIAN_LEVERAGE = 15     # 15x leverage
 DONCHIAN_RISK_PCT = 0.03   # 3% risk per trade
 DONCHIAN_ATR_STOP_MULT = 2.0  # 2x ATR stop
-DONCHIAN_RR_RATIO = 2.5    # 2.5:1 reward:risk (optimized)
+DONCHIAN_RR_RATIO = 4.0    # 4:1 reward:risk (matches bot_multi)
 
 # Trending regime
 TREND_RSI_PERIOD = 14

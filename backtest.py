@@ -107,18 +107,18 @@ class Backtester:
         self.strategy_fn = strategy_fn
         self.regime_col = regime_col
 
-        # Default regime-specific params
+        # Default fixed params (match bot_multi.py)
         self.leverage_map = leverage_map or {
             "trending_up": 15, "trending_down": 15,
-            "ranging": 10, "volatile": 5, "unknown": 5
+            "ranging": 15, "volatile": 15, "unknown": 15
         }
         self.risk_map = risk_map or {
             "trending_up": 0.03, "trending_down": 0.03,
-            "ranging": 0.02, "volatile": 0.015, "unknown": 0.015
+            "ranging": 0.03, "volatile": 0.03, "unknown": 0.03
         }
         self.atr_stop_map = atr_stop_map or {
             "trending_up": 2.0, "trending_down": 2.0,
-            "ranging": 1.5, "volatile": 2.5, "unknown": 2.5
+            "ranging": 2.0, "volatile": 2.0, "unknown": 2.0
         }
 
     def run(self, df):
