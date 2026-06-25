@@ -1,0 +1,26 @@
+[
+  {
+    "time": "2026-06-25T05:02:33.158129+00:00",
+    "action": "OPEN",
+    "pair": "ETH",
+    "side": "long",
+    "entry": 1634.74,
+    "stop": 1592.85,
+    "tp": 1802.31,
+    "margin": 1.56,
+    "leverage": 15,
+    "balance": 20.0
+  },
+  {
+    "time": "2026-06-25T05:03:05.216133+00:00",
+    "action": "OPEN",
+    "pair": "SOL",
+    "side": "long",
+    "entry": 68.44,
+    "stop": 66.36,
+    "tp": 76.77,
+    "margin": 1.31,
+    "leverage": 15,
+    "balance": 20.0
+  }
+]

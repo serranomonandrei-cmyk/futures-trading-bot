@@ -1,0 +1,32 @@
+{
+  "balance": 20.0,
+  "peak_balance": 20.0,
+  "positions": {
+    "ETH/USDT:USDT": {
+      "side": "long",
+      "entry_price": 1634.7402749999999,
+      "stop": 1592.8474178571425,
+      "tp": 1802.3117035714288,
+      "leverage": 15,
+      "margin": 1.5608773299232663,
+      "bars": 0,
+      "open_time": "2026-06-25T05:02:33.158129+00:00"
+    },
+    "SOL/USDT:USDT": {
+      "side": "long",
+      "entry_price": 68.440526,
+      "stop": 66.35766885714287,
+      "tp": 76.77195457142857,
+      "leverage": 15,
+      "margin": 1.3143585240054911,
+      "bars": 0,
+      "open_time": "2026-06-25T05:03:05.216133+00:00"
+    }
+  },
+  "trades": 0,
+  "wins": 0,
+  "total_pnl": 0.0,
+  "daily_trades": 2,
+  "last_day": "2026-06-25",
+  "start_time": "2026-06-25T05:02:25.168752+00:00"
+}
