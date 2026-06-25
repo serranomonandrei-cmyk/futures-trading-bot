@@ -219,9 +219,7 @@ class Bot:
         if bal <= 0:
             return
 
-        dd = (self.state["peak_balance"] - bal) / self.state["peak_balance"]
-        if dd >= MAX_DRAWDOWN_PCT:
-            return
+        pass  # no drawdown kill switch
 
         today = now.strftime("%Y-%m-%d")
         if self.state.get("last_day") == today and self.state.get("daily_trades", 0) >= MAX_DAILY_TRADES:
