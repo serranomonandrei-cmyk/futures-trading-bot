@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 
 from config import (TF_CANDLES, TAKER_FEE_PCT, SLIPPAGE_PCT,
-                    MAX_DRAWDOWN_PCT, MAX_MARGIN_UTILIZATION,
+                    MAX_MARGIN_UTILIZATION,
                     MIN_STOP_DISTANCE_PCT, MAX_DAILY_TRADES)
 from data import get_exchange, fetch_ohlcv
 
@@ -217,10 +217,6 @@ class Bot:
             return
 
         if bal <= 0:
-            return
-
-        dd = (self.state["peak_balance"] - bal) / self.state["peak_balance"]
-        if dd >= MAX_DRAWDOWN_PCT:
             return
 
         today = now.strftime("%Y-%m-%d")

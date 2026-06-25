@@ -8,7 +8,7 @@ import pandas as pd
 from dataclasses import dataclass, field
 from config import (
     STARTING_BALANCE, TAKER_FEE_PCT, SLIPPAGE_PCT, FUNDING_RATE_PCT,
-    MAX_LEVERAGE, MAX_RISK_PCT, MAX_DRAWDOWN_PCT, MAX_CONCURRENT_POSITIONS,
+    MAX_LEVERAGE, MAX_RISK_PCT, MAX_CONCURRENT_POSITIONS,
     MIN_STOP_DISTANCE_PCT, DONCHIAN_RR_RATIO
 )
 
@@ -161,10 +161,6 @@ class Backtester:
 
     def _execute_entry(self, portfolio, df, bar_idx, signal):
         """Enter position at bar open (after signal from prev bar close)."""
-        # Kill switch: no entries if drawdown exceeded
-        if portfolio.drawdown >= MAX_DRAWDOWN_PCT:
-            return
-
         bar = df.iloc[bar_idx]
         regime = bar.get(self.regime_col, "unknown")
         atr_val = bar.get("atr", 0)

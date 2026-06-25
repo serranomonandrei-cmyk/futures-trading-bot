@@ -21,7 +21,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from config import (PAIRS, TF_CANDLES, TAKER_FEE_PCT, SLIPPAGE_PCT, MAX_DRAWDOWN_PCT)
+from config import (PAIRS, TF_CANDLES, TAKER_FEE_PCT, SLIPPAGE_PCT)
 from data import get_exchange, fetch_ohlcv
 
 LOG_DIR = Path(__file__).parent / "logs"
@@ -158,11 +158,6 @@ class Bot:
             return
 
         if self.state["balance"] <= 0:
-            return
-
-        dd = (self.state["peak_balance"] - self.state["balance"]) / self.state["peak_balance"]
-        if dd >= MAX_DRAWDOWN_PCT:
-            print(f"  KILL SWITCH: DD {dd:.0%}")
             return
 
         signal = calc_signal(df)
