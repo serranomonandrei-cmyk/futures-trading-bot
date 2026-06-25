@@ -244,7 +244,7 @@ class Bot:
             return
 
         notional = risk_usd / stop_dist_pct
-        notional = min(notional, bal * 10)
+        notional = min(notional, 500)  # max $500 notional (realistic)
         margin = notional / LEVERAGE
 
         total_margin = sum(p["margin"] for p in positions.values())
