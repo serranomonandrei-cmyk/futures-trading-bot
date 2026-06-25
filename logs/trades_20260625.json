@@ -22,5 +22,44 @@
     "margin": 1.31,
     "leverage": 15,
     "balance": 20.0
+  },
+  {
+    "time": "2026-06-25T13:32:15.047699+00:00",
+    "action": "OPEN",
+    "pair": "ETH",
+    "strategy": "SMA(16)",
+    "side": "short",
+    "entry": 1634.42,
+    "stop": 1661.71,
+    "tp": 1525.24,
+    "margin": 2.4,
+    "leverage": 15,
+    "balance": 20.0
+  },
+  {
+    "time": "2026-06-25T13:32:16.017584+00:00",
+    "action": "OPEN",
+    "pair": "SOL",
+    "strategy": "SMA(28)",
+    "side": "short",
+    "entry": 68.24,
+    "stop": 69.56,
+    "tp": 62.95,
+    "margin": 2.06,
+    "leverage": 15,
+    "balance": 20.0
+  },
+  {
+    "time": "2026-06-25T13:32:21.054094+00:00",
+    "action": "OPEN",
+    "pair": "LINK",
+    "strategy": "SMA(28)",
+    "side": "short",
+    "entry": 7.44,
+    "stop": 7.56,
+    "tp": 6.99,
+    "margin": 2.65,
+    "leverage": 15,
+    "balance": 20.0
   }
 ]
