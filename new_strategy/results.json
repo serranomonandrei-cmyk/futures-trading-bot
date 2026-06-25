@@ -1,0 +1,152 @@
+{
+  "ETH": {
+    "VWMA": {
+      "period": 59,
+      "net_pnl": 63.50254500386578,
+      "total_trades": 217,
+      "win_rate": 0.3640552995391705,
+      "max_drawdown": 0.09502916511720556
+    },
+    "VOLPROF": {
+      "net_pnl": -15.9196061552165,
+      "total_trades": 482,
+      "win_rate": 0.2946058091286307,
+      "max_drawdown": 0.9395913562082232
+    }
+  },
+  "BTC": {
+    "VWMA": {
+      "period": 23,
+      "net_pnl": 36.256552971507865,
+      "total_trades": 329,
+      "win_rate": 0.3525835866261398,
+      "max_drawdown": 0.0617384507226173
+    },
+    "VOLPROF": {
+      "net_pnl": -15.931574977422278,
+      "total_trades": 510,
+      "win_rate": 0.296078431372549,
+      "max_drawdown": 0.9239224294478826
+    }
+  },
+  "SOL": {
+    "VWMA": {
+      "period": 32,
+      "net_pnl": 72.79883992038522,
+      "total_trades": 307,
+      "win_rate": 0.3517915309446254,
+      "max_drawdown": 0.06555222363919701
+    },
+    "VOLPROF": {
+      "net_pnl": -16.73549106607947,
+      "total_trades": 182,
+      "win_rate": 0.21978021978021978,
+      "max_drawdown": 0.863895805749754
+    }
+  },
+  "BNB": {
+    "VWMA": {
+      "period": 47,
+      "net_pnl": 1.9807777716062382,
+      "total_trades": 247,
+      "win_rate": 0.3157894736842105,
+      "max_drawdown": 0.12298277697476431
+    },
+    "VOLPROF": {
+      "net_pnl": -16.821127706683395,
+      "total_trades": 301,
+      "win_rate": 0.2591362126245847,
+      "max_drawdown": 0.9392885792287249
+    }
+  },
+  "SUI": {
+    "VWMA": {
+      "period": 23,
+      "net_pnl": 23.735282776783684,
+      "total_trades": 470,
+      "win_rate": 0.2978723404255319,
+      "max_drawdown": 0.4756044306055773
+    },
+    "VOLPROF": {
+      "net_pnl": -15.161569510525286,
+      "total_trades": 208,
+      "win_rate": 0.24519230769230768,
+      "max_drawdown": 0.9091497333289188
+    }
+  },
+  "LINK": {
+    "VWMA": {
+      "period": 26,
+      "net_pnl": 0.6794320269923979,
+      "total_trades": 413,
+      "win_rate": 0.29055690072639223,
+      "max_drawdown": 0.604250824315312
+    },
+    "VOLPROF": {
+      "net_pnl": -15.694415166325825,
+      "total_trades": 189,
+      "win_rate": 0.2328042328042328,
+      "max_drawdown": 0.8158199390844223
+    }
+  },
+  "ADA": {
+    "VWMA": {
+      "period": 56,
+      "net_pnl": -4.798329729573197,
+      "total_trades": 247,
+      "win_rate": 0.31983805668016196,
+      "max_drawdown": 0.4657149437750534
+    },
+    "VOLPROF": {
+      "net_pnl": -15.798888228794643,
+      "total_trades": 244,
+      "win_rate": 0.2459016393442623,
+      "max_drawdown": 0.8846166636992518
+    }
+  },
+  "DOGE": {
+    "VWMA": {
+      "period": 41,
+      "net_pnl": -7.822961189439681,
+      "total_trades": 332,
+      "win_rate": 0.27710843373493976,
+      "max_drawdown": 0.8142636896255823
+    },
+    "VOLPROF": {
+      "net_pnl": -15.871578274665318,
+      "total_trades": 556,
+      "win_rate": 0.2931654676258993,
+      "max_drawdown": 0.9733431505593417
+    }
+  },
+  "XRP": {
+    "VWMA": {
+      "period": 8,
+      "net_pnl": 20.73059489440709,
+      "total_trades": 590,
+      "win_rate": 0.32372881355932204,
+      "max_drawdown": 0.6627806513050577
+    },
+    "VOLPROF": {
+      "net_pnl": -16.722745058997308,
+      "total_trades": 566,
+      "win_rate": 0.30918727915194344,
+      "max_drawdown": 0.984967396090475
+    }
+  },
+  "BCH": {
+    "VWMA": {
+      "period": 26,
+      "net_pnl": 4.823624932230818,
+      "total_trades": 275,
+      "win_rate": 0.3018181818181818,
+      "max_drawdown": 0.24561585270171107
+    },
+    "VOLPROF": {
+      "net_pnl": 2.8931952419681473,
+      "total_trades": 433,
+      "win_rate": 0.3348729792147806,
+      "max_drawdown": 0.6606039420549715
+    }
+  }
+}

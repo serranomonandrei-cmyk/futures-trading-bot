@@ -2,18 +2,18 @@
 Multi-coin backtest. Exact same logic as bot_multi.py (single source of truth).
 Imports STRATEGIES, calc_signal, calc_atr, and all params from bot_multi.
 """
-import pandas as pd, numpy as np
-from data import get_exchange, fetch_ohlcv
+import pandas as pd, numpy as np, ccxt
+from data import fetch_ohlcv
 
-exchange = get_exchange()
+exchange = ccxt.binance({"enableRateLimit": True})
 
 import bot_multi
-from bot_multi import STRATEGIES, calc_signal, calc_atr, LEVERAGE, RISK_PCT, RR_RATIO, ATR_STOP_MULT, MAX_BARS_HELD, MAX_POSITIONS
+from bot_multi import STRATEGIES, calc_signal, calc_atr, LEVERAGE, RISK_PCT, RR_RATIO, ATR_STOP_MULT, MAX_BARS_HELD, MAX_POSITIONS, BREAKEVEN_BARS
 from config import TAKER_FEE_PCT, SLIPPAGE_PCT, MIN_STOP_DISTANCE_PCT, MAX_MARGIN_UTILIZATION, STARTING_BALANCE
 
 def run(min_months=12):
     print(f"\nMulti-coin backtest ({len(STRATEGIES)} coins, {MAX_POSITIONS} max pos)")
-    print(f"Params: {LEVERAGE}x lev, {RISK_PCT:.0%} risk, {RR_RATIO}:1 RR, ATR {ATR_STOP_MULT}x stop, {MAX_BARS_HELD}h cap")
+    print(f"Params: {LEVERAGE}x lev, {RISK_PCT:.0%} risk, {RR_RATIO}:1 RR, ATR {ATR_STOP_MULT}x stop, {MAX_BARS_HELD}h cap, breakeven at {BREAKEVEN_BARS}h")
     print()
 
     # Load data
@@ -54,14 +54,17 @@ def run(min_months=12):
             pos = positions[pair]
             pos["bars"] += 1
 
+            # Breakeven: move stop to entry after BREAKEVEN_BARS
+            stop = pos["entry"] if pos["bars"] >= BREAKEVEN_BARS else pos["stop"]
+
             exit_p = None; reason = None
             if pos["bars"] >= MAX_BARS_HELD:
                 exit_p = row["close"]; reason = "TIME"
             elif pos["side"] == "long":
-                if row["low"] <= pos["stop"]: exit_p = pos["stop"]; reason = "SL"
+                if row["low"] <= stop: exit_p = stop; reason = "SL"
                 elif row["high"] >= pos["tp"]: exit_p = pos["tp"]; reason = "TP"
             else:
-                if row["high"] >= pos["stop"]: exit_p = pos["stop"]; reason = "SL"
+                if row["high"] >= stop: exit_p = stop; reason = "SL"
                 elif row["low"] <= pos["tp"]: exit_p = pos["tp"]; reason = "TP"
 
             if exit_p is not None:

@@ -47,6 +47,7 @@ RR_RATIO = 4.0
 ATR_STOP_MULT = 2.0
 MAX_BARS_HELD = 72
 MAX_POSITIONS = 10
+BREAKEVEN_BARS = 12  # move stop to entry after N bars
 
 
 def calc_atr(df, period=14):
@@ -148,6 +149,11 @@ class Bot:
         margin = pos["margin"]
         bars_held = pos.get("bars", 0) + 1
         pos["bars"] = bars_held
+
+        # Breakeven: after BREAKEVEN_BARS, move stop to entry
+        if bars_held >= BREAKEVEN_BARS:
+            stop = entry
+            pos["stop"] = stop
 
         hit_time = bars_held >= MAX_BARS_HELD
         exit_price = None
@@ -337,7 +343,7 @@ class Bot:
         print(f"\n{'='*60}")
         print(f"  MULTI-COIN BOT — {len(self.pairs)} pairs, per-coin strategies")
         print(f"  Account: ${self.state['balance']:.2f} | Leverage: {LEVERAGE}x | Risk: {RISK_PCT:.0%}")
-        print(f"  Max {MAX_POSITIONS} pos | {MAX_BARS_HELD}h cap | {MAX_MARGIN_UTILIZATION:.0%} margin")
+        print(f"  Max {MAX_POSITIONS} pos | {MAX_BARS_HELD}h cap | {MAX_MARGIN_UTILIZATION:.0%} margin | breakeven at {BREAKEVEN_BARS}h")
         print(f"  Mode: {'LIVE' if self.live else 'PAPER'}")
         print(f"  Pairs: {', '.join(p.split('/')[0] for p in self.pairs)}")
         print(f"{'='*60}\n")
