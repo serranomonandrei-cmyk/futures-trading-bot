@@ -1,12 +1,26 @@
-"""Fetch OHLCV from Binance. Minimal, no abstraction."""
+"""Fetch OHLCV from Binance. Reads .env for API keys if available."""
 
+import os
 import ccxt
 import pandas as pd
 import time
 from datetime import datetime, timedelta, timezone
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def get_exchange():
+    api_key = os.getenv("BINANCE_API_KEY")
+    api_secret = os.getenv("BINANCE_API_SECRET")
+
+    if api_key and api_secret:
+        return ccxt.binance({
+            "enableRateLimit": True,
+            "apiKey": api_key,
+            "secret": api_secret,
+            "options": {"defaultType": "future"},
+        })
     return ccxt.binance({"enableRateLimit": True})
 
 
