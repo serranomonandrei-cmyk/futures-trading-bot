@@ -5,14 +5,16 @@ STARTING_BALANCE = 20.0  # USD
 
 # --- Pairs ---
 PAIRS = [
-    "ETH/USDT:USDT",   # +$64.38 full backtest, 28% WR, proven winner
-    "ONE/USDT:USDT",   # +$27.57 full backtest, OOS-heavy
-    "ZEC/USDT:USDT",   # +$22.00 full backtest, OOS-heavy
-    "SOL/USDT:USDT",   # liquid, OOS-profitable
-    "BNB/USDT:USDT",   # liquid diversifier
-    "XRP/USDT:USDT",   # liquid diversifier
-    "DOGE/USDT:USDT",  # liquid diversifier
-    "ADA/USDT:USDT",   # liquid diversifier
+    "ETH/USDT:USDT",   # SMA(16) — +$92.36, best performer
+    "BTC/USDT:USDT",   # SMA(36) — +$8.58, OOS positive
+    "SOL/USDT:USDT",   # SMA(28) — +$15.09, OOS positive
+    "BNB/USDT:USDT",   # SMA(56) — +$37.98, OOS positive
+    "SUI/USDT:USDT",   # SMA(36) — +$61.05, OOS > IS
+    "LINK/USDT:USDT",  # SMA(28) — +$52.55, OOS positive
+    "ADA/USDT:USDT",   # SMA(28) — +$52.72, OOS positive
+    "DOGE/USDT:USDT",  # EMA(18) — +$3.97, OOS positive
+    "XRP/USDT:USDT",   # EMA(50) — +$11.43, OOS > IS
+    "BCH/USDT:USDT",   # MACD(12,26,9) — +$24.48, OOS positive
 ]
 
 # --- Timeframes ---
@@ -58,7 +60,7 @@ VOLATILE_ATR_STOP_MULT = 2.5
 MAX_LEVERAGE = 20
 MAX_RISK_PCT = 0.05
 MAX_DRAWDOWN_PCT = 0.30  # Kill switch
-MAX_CONCURRENT_POSITIONS = 3
+MAX_CONCURRENT_POSITIONS = 10
 MAX_MARGIN_UTILIZATION = 0.75
 MIN_STOP_DISTANCE_PCT = 0.005  # 0.5%
 MAX_DAILY_TRADES = 10
